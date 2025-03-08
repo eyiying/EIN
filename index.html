@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>PDF全景展示</title>
     <style>
         /* 全局样式 */
@@ -18,6 +19,8 @@
             background-color: #f1f1f1;
             padding: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow-x: auto; /* 允许标签栏水平滚动 */
+            white-space: nowrap; /* 防止标签换行 */
         }
         .tab button {
             background-color: inherit;
@@ -41,11 +44,13 @@
             width: 100%;
             height: calc(100% - 60px); /* 减去标签栏高度 */
             border: none;
+            overflow: hidden; /* 禁止PDF容器内的内容溢出 */
         }
         iframe {
             width: 100%;
             height: 100%;
             border: none;
+            object-fit: contain; /* 确保PDF内容在容器内正确缩放 */
         }
     </style>
 </head>
