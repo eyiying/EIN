@@ -45,12 +45,23 @@
             height: calc(100% - 60px); /* 减去标签栏高度 */
             border: none;
             overflow: hidden; /* 禁止PDF容器内的内容溢出 */
+            position: relative;
         }
         iframe {
             width: 100%;
             height: 100%;
             border: none;
-            object-fit: contain; /* 确保PDF内容在容器内正确缩放 */
+            display: block;
+        }
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .pdf-container {
+                height: calc(100% - 50px); /* 移动端调整高度 */
+            }
+            .tab button {
+                padding: 8px 16px; /* 移动端调整按钮大小 */
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -94,6 +105,13 @@
 
     // 默认打开第一个标签
     document.getElementsByClassName("tablinks")[0].click();
+
+    // 监听窗口大小变化，调整PDF显示
+    window.addEventListener("resize", () => {
+        const iframe = document.getElementById("pdf-viewer");
+        iframe.style.width = "100%"; // 强制iframe宽度为100%
+        iframe.style.height = "100%"; // 强制iframe高度为100%
+    });
 </script>
 
 </body>
