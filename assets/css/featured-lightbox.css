@@ -1,0 +1,115 @@
+/* 灯箱样式 */
+.featured-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.featured-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.featured-lightbox-content {
+    position: relative;
+    width: auto;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background-color: transparent;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: none;
+}
+
+.featured-lightbox-content img {
+    display: block;
+    max-height: none;
+    width: 100%;
+    max-width: 580px;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 4px;
+}
+
+/* 隐藏灯箱的左右导航按钮 */
+.featured-lightbox-prev,
+.featured-lightbox-next {
+    display: none; /* 完全隐藏左右导航按钮 */
+}
+
+/* 保留关闭按钮的样式不变 */
+.featured-lightbox-close {
+    position: fixed;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 10000;
+    transition: all 0.3s ease;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+}
+
+.featured-lightbox-close:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* 适配移动设备 */
+@media (max-width: 992px) {
+    .featured-lightbox-content {
+        max-width: 600px;
+    }
+    
+    .featured-lightbox-content img {
+        max-width: 580px;
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-lightbox-content {
+        width: 95%;
+        max-width: 95%;
+    }
+    
+    .featured-lightbox-close {
+        top: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
+    
+    .featured-lightbox-prev,
+    .featured-lightbox-next {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
+
+/* 当灯箱打开时防止滚动 */
+body.lightbox-open {
+    overflow: hidden;
+}
+
+/* 为项目卡片添加鼠标悬停效果 */
+.project-card {
+    cursor: pointer;
+} 

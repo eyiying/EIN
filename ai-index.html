@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI工具导航 - EINdesign</title>
+    
+    <!-- 引入主站的CSS文件 -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/fonts/remixicon.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- 引入AI导航页特有的CSS -->
+    <link rel="stylesheet" href="assets/css/ai-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- 引入Google字体Poppins，与主站保持一致 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- START MENU DESIGN AREA - 复制主站的导航栏 -->
+    <header class="main-header">
+        <div class="header-upper">
+            <div class="container">
+                <div class="header-inner d-flex align-items-center">
+                    <!-- START LOGO DESIGN AREA -->
+                    <div class="logo-outer">
+                        <div class="logo">
+                            <a href="index.html"><img src="assets/images/logo.png" alt="Logo" title="Logo" /></a>
+                        </div>
+                    </div>
+                    <!-- / END LOGO DESIGN AREA -->
+                    <!-- START NAV DESIGN AREA -->
+                    <div class="nav-outer clearfix mx-auto">
+                        <!-- Main Menu -->
+                        <nav class="main-menu navbar-expand-lg">
+                            <div class="navbar-header">
+                                <div class="mobile-logo">
+                                    <a href="index.html">
+                                        <img src="assets/images/logo.png" alt="Logo" title="Logo" />
+                                    </a>
+                                </div>
+                                <!-- Toggle Button -->
+                                <button type="button" class="navbar-toggle" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="navbar-collapse collapse">
+                                <ul class="navigation onepage clearfix">
+                                    <li><a class="nav-link-click" href="index.html">主 页</a></li>
+                                    <li><a class="nav-link-click" href="ai-index.html">工具导航</a></li>  
+                                
+                                </ul>
+                            </div>
+                        </nav>
+                        <!-- / END NAV DESIGN AREA -->
+                    </div>
+                    <div class="menu-btns">
+                        <a href=" " class="theme-btn"><i class="ri-shake-hands-line"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- / END MENU DESIGN AREA -->
+
+    <!-- 使用与主站风格一致的标题区域 -->
+    <section class="banner-section pt-50 pb-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="banner-content text-center">
+                        <h1 class="mb-20">智能工具导航</h1>
+                        <p class="lead mb-30">精选高效实用的AI与设计工具集合</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="category">
+            <h2>图像处理工具</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://segment-anything.com/favicon.ico" alt="Segment Anything图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>Segment Anything</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>可灵活抠图的网站，提供精确的图像分割功能</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://segment-anything.com/" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://www.remove.bg/favicon.ico" alt="Remove.bg图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>Remove.bg</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>一键扣除图片背景的网站，简单高效</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://www.remove.bg/zh" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card" style="display: none;"></div>
+                
+                <div class="tool-card" tabindex="-1" style="outline: 0 !important;">
+                    <div class="tool-icon">
+                        <img src="https://www.upscayl.org/favicon.ico" alt="Upscayl图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>Upscayl</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>AI图像放大工具，提高画面尺寸和精度</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://www.upscayl.org/" target="_blank" class="tool-link" tabindex="-1" onclick="this.blur();"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://bigjpg.com/favicon.ico" alt="BigJPG图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>BigJPG</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>AI图像无损放大工具，提升图片分辨率</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://bigjpg.com/" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://vectorizer.ai/favicon.ico" alt="Vectorizer.ai图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>Vectorizer.ai</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>将位图转换为矢量图形的AI工具</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://vectorizer.ai/" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://tinypng.com/favicon.ico" alt="TinyPNG图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>TinyPNG</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>智能压缩PNG与JPEG图片，减小文件体积达80%</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://tinypng.com/" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://moshpro.app/favicon.ico" alt="Mosh Pro图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>Mosh Pro</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>实时创意视觉特效处理工具，适用于图像和视频</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://moshpro.app/" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="category">
+            <h2>AI创作工具</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://www.d-id.com/favicon.ico" alt="D-ID图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>D-ID</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>IP人像视频生成工具，可编辑文案让IP说话</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://www.d-id.com/api/" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://moonvy.com/favicon.ico" alt="Moonvy OPS图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>Moonvy OPS</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>SD和MJ提示词编辑工具，优化AI绘画提示</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://moonvy.com/apps/ops/" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://frozenland.cc/favicon.ico" alt="Frozenland图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>Frozenland</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>MJ提词器，辅助生成更好的Midjourney提示词</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://frozenland.cc" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://www.liblib.ai/favicon.ico" alt="Liblib.ai图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>Liblib.ai</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>网页端类似SD的AI绘画工具</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://www.liblib.ai/" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://ideogram.ai/favicon.ico" alt="Ideogram图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>Ideogram</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>AI文字设计工具，创建独特的文字艺术</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://ideogram.ai" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://artefacts.ai/favicon.ico" alt="Artefacts图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>Artefacts.ai</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>2D图像转3D旋转模型的AI工具</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://artefacts.ai/" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Krea.ai卡片 -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://www.krea.ai/favicon.ico" alt="Krea.ai图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>Krea.ai</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>多功能AI创作平台，提供实时图像生成、视频制作和编辑工具</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://www.krea.ai/" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Suno卡片 -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://suno.com/favicon.ico" alt="Suno图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>Suno</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>AI音乐创作工具，通过文本描述生成专业品质的原创音乐</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://suno.com/home" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Civitai卡片 -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://civitai.com/favicon.ico" alt="Civitai图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>Civitai</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>AI创作社区平台，提供海量模型、图像和创意资源分享</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://civitai.com/" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RunwayML卡片 -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://runwayml.com/favicon.ico" alt="RunwayML图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>RunwayML</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>专业级AI视频与图像创作平台，提供强大的生成和编辑功能</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://runwayml.com/" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="category">
+            <h2>格式转换工具</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://convertio.co/favicon.ico" alt="Convertio图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>Convertio</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>多种文件格式互转工具，支持CDR转AI等</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://convertio.co/zh/cdr-ai/" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://www.aconvert.com/favicon.ico" alt="Aconvert图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>Aconvert</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>多功能在线文件转换工具，支持PDF、文档、图像、视频等格式</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://www.aconvert.com/cn" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="category">
+            <h2>3D资源</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://free3d.com/favicon.ico" alt="Free3D图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>Free3D</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>提供免费3D模型下载的资源网站</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://free3d.com/" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://sketchfab.com/favicon.ico" alt="Sketchfab图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>Sketchfab</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>3D模型分享和下载平台，包含免费和付费资源</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://sketchfab.com/3d-models" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://kitbash3d.com/favicon.ico" alt="KitBash3D图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>KitBash3D</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>电影级品质的3D环境资产库，专为专业影视和游戏项目设计</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://kitbash3d.com/" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TurboSquid卡片 -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://www.turbosquid.com/favicon.ico" alt="TurboSquid图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>TurboSquid</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>海量专业3D模型交易平台，供应高质量3D资产</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://www.turbosquid.com/" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="category">
+            <h2>素材资源</h2>
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://www.videvo.net/favicon.ico" alt="Videvo图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>Videvo</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>提供免费视频素材下载的网站</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://www.videvo.net/" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pexels卡片 -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://www.pexels.com/favicon.ico" alt="Pexels图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>Pexels</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>提供海量免费高质量图片和视频素材的网站</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://www.pexels.com/zh-cn/" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pixabay卡片 -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://pixabay.com/favicon.ico" alt="Pixabay图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>Pixabay</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>免费图片、插画、矢量和视频素材分享平台</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://pixabay.com/" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Freepik卡片 -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://www.freepik.com/favicon.ico" alt="Freepik图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>Freepik</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>提供高质量图片、矢量图、PSD和图标素材的平台</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://www.freepik.com/" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The Noun Project卡片 -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://thenounproject.com/favicon.ico" alt="The Noun Project图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>The Noun Project</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>海量图标和优质照片资源库，提供简洁统一的设计元素</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://thenounproject.com/" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PNGimg卡片 -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://pngimg.com/favicon.ico" alt="PNGimg图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>PNGimg</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>免费PNG透明背景图片素材库，分类丰富</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://pngimg.com" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- unDraw卡片 -->
+                <div class="tool-card">
+                    <div class="tool-icon">
+                        <img src="https://undraw.co/favicon.ico" alt="unDraw图标" onerror="this.src='placeholder.png'">
+                    </div>
+                    <div class="tool-content">
+                        <div class="tool-title">
+                            <h3>unDraw</h3>
+                        </div>
+                        <div class="tool-description">
+                            <p>开源可定制颜色的插画资源库，适合网页和应用设计</p>
+                        </div>
+                        <div class="tool-action">
+                            <a href="https://undraw.co/illustrations" target="_blank" class="tool-link"><span>前往网站</span> <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- START FOOTER DESIGN AREA - 使用与主站相同的底部 -->
+    <footer class="main-footer">
+        <div class="footer-bottom pt-50 pb-40">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="copyright-text">
+                            <p>
+                               
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="copyright-text extra-copyright">
+                            <p>
+                                Copyright @2025 <a href="index.html">EINdesign</a> All Rights Reserved.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- / END FOOTER DESIGN AREA -->
+
+    <!-- START SCROOL UP DESIGN AREA - 添加与主站相同的回到顶部按钮 -->
+    <div class="progress-wrap cursor-pointer">
+        <i class="ri-arrow-up-double-line"></i>
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+    <!-- / END SCROOL UP DESIGN AREA -->
+
+    <!-- 引入主站的JS文件 -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    
+    <!-- 引入AI导航页特有的JS -->
+    <script src="assets/js/ai-script.js"></script>
+</body>
+</html>
