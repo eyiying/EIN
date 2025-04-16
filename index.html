@@ -190,7 +190,7 @@
     </div>
 
     <!-- 将原有的body内容用div包裹并默认隐藏 -->
-    <div id="site-content">
+    <div id="site-content" class="content-hidden">
     <!-- START PRELOADER AREA-->
     <div class="preloader">
         <svg viewbox="0 0 1000 1000" preserveaspectratio="none">
@@ -845,6 +845,20 @@
     <script src="assets/js/featured-lightbox.js"></script>
     <!-- 添加改进的密码保护脚本 -->
     <script>
+    // 添加这段代码在脚本最前面，用于立即隐藏密码弹窗
+    (function() {
+        // 立即检查本地存储中的认证状态
+        const isAuth = localStorage.getItem('eindesign_auth');
+        const urlParams = new URLSearchParams(window.location.search);
+        const reloadParam = urlParams.get('reload');
+        
+        // 如果已验证或有reload参数，立即隐藏密码弹窗
+        if (isAuth === 'true' || reloadParam === 'true') {
+            // 添加内联样式以立即隐藏密码弹窗
+            document.write('<style>#password-overlay{display:none !important;} #site-content{display:block !important;}</style>');
+        }
+    })();
+
     // 定义受保护的页面列表
     const protectedPages = ['/index.html', '/', '/contact.html'];
 
@@ -859,38 +873,64 @@
         );
     }
 
+    // 检查是否已验证密码
+    function checkAuth() {
+        // 从localStorage中获取身份验证状态
+        const isAuth = localStorage.getItem('eindesign_auth');
+        
+        // 如果不需要保护，直接显示内容
+        if (!needsProtection()) {
+            if (document.getElementById('password-overlay')) {
+                document.getElementById('password-overlay').style.display = 'none';
+            }
+            if (document.getElementById('site-content')) {
+                document.getElementById('site-content').classList.remove('content-hidden');
+            }
+            return true;
+        }
+        
+        // 如果需要保护但已验证，显示内容
+        if (isAuth === 'true') {
+            if (document.getElementById('password-overlay')) {
+                document.getElementById('password-overlay').style.display = 'none';
+            }
+            if (document.getElementById('site-content')) {
+                document.getElementById('site-content').classList.remove('content-hidden');
+            }
+            return true;
+        }
+        
+        // 需要保护且未验证
+        return false;
+    }
+
     // 页面加载时检查验证状态
     document.addEventListener('DOMContentLoaded', function() {
-        // 默认不隐藏内容
-        const siteContent = document.getElementById('site-content');
-        const passwordOverlay = document.getElementById('password-overlay');
-        
         // 跳过不需要保护的页面
         if (!needsProtection()) {
             return;
         }
         
-        // 检查URL参数和认证状态
+        // 检查URL参数，看是否有reload=true
         const urlParams = new URLSearchParams(window.location.search);
         const reloadParam = urlParams.get('reload');
-        const isAuth = localStorage.getItem('eindesign_auth');
         
-        // 如果是刚刷新回来的页面，移除reload参数并正常显示内容
+        // 如果是刚刷新回来的页面，移除reload参数并开始正常显示内容
         if (reloadParam === 'true') {
+            // 移除URL参数但不刷新页面
             window.history.replaceState({}, document.title, window.location.pathname);
-            return; // 保持内容可见，退出函数
+            // 隐藏密码遮罩，显示内容
+            document.getElementById('password-overlay').style.display = 'none';
+            document.getElementById('site-content').classList.remove('content-hidden');
+            return; // 不再执行后续检查
         }
         
-        // 如果已认证，保持内容可见
-        if (isAuth === 'true') {
-            return; // 保持内容可见，退出函数
+        // 正常的验证状态检查
+        if (checkAuth()) {
+            return; // 已验证或不需要验证
         }
         
-        // 到这里，说明需要密码验证且未验证
-        // 显示密码弹窗
-        passwordOverlay.style.display = 'flex';
-        
-        // 使用您提供的密码哈希值
+        // 使用您提供的密码哈希值 - 对应密码
         const correctPasswordHash = '7a8a13fd1a02e94c99f4bd229ca5c98981e4155dd26e6046a72a5d39160200b3';
         
         const passwordSubmit = document.getElementById('password-submit');
@@ -931,7 +971,7 @@
                 localStorage.setItem('eindesign_auth', 'true');
                 
                 // 显示简单的加载提示
-                passwordBox.innerHTML = `
+                document.getElementById('password-box').innerHTML = `
                     <p style="color: #fff; font-size: 22px; margin-bottom: 15px;">验证成功</p>
                     <p style="color: rgba(255,255,255,0.7);">正在加载页面...</p>
                 `;
