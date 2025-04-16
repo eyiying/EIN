@@ -2,48 +2,32 @@
 <html lang="zh-CN">
 
 <head>
-    <!-- META -->
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Bentos - Creative Portfolio Showcase Template">
     <meta name="keywords" content="personal, portfolio new, html, one page, bootstrap, new html template, design, creative, onepage, clean, modern">
     <meta name="author" content="Tanvir Hossain">
-    <!-- PAGE TITLE -->
+    
     <title>易颖的设计小站</title>
-    <!-- FAV ICON -->
+    
     <link rel="apple-touch-icon" href="assets/images/favicon.png">
-    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
-    <!-- ALL GOOGLE FONTS -->
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <!-- FONT AWESOME CSS -->
     <link rel="stylesheet" href="assets/fonts/remixicon.css" />
-    <!-- MAGNIFIC CSS -->
     <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <!-- NICE SELECT CSS -->
     <link rel="stylesheet" href="assets/css/nice-select.min.css" />
-    <!-- ANIMATE CSS -->
     <link rel="stylesheet" href="assets/css/animate.min.css" />
-    <!-- SLICK CSS -->
     <link rel="stylesheet" href="assets/css/slick.min.css" />
-    <!-- SPACING CSS -->
     <link rel="stylesheet" href="assets/css/spacing.css" />
-    <!-- MAIN STYLE CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
-    <!-- RESPONSIVE CSS -->
     <link rel="stylesheet" href="assets/css/responsive.css">
-    <!-- 在其他CSS文件后添加 -->
     <link rel="stylesheet" href="assets/css/featured-lightbox.css">
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+   
     <style>
         .icon-small {
             width: 24px;
@@ -51,10 +35,8 @@
         }
     </style>
     
-    <!-- 添加SHA-256哈希函数 -->
+  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
-    
-    <!-- 添加密码保护样式 - 调整为与网站主题色调一致 -->
     <style>
         #password-overlay {
             position: fixed;
@@ -154,14 +136,12 @@
             display: none;
         }
         
-        /* 添加站点logo */
         .password-logo {
             width: 120px;
             margin-bottom: 20px;
             opacity: 0.9;
         }
         
-        /* 添加渐变边框效果 */
         #password-box::before {
             content: '';
             position: absolute;
@@ -177,7 +157,6 @@
 </head>
 
 <body>
-    <!-- 添加密码保护遮罩层 -->
     <div id="password-overlay" >
         <div id="password-box">
             <img src="assets/images/logo.png" alt="Logo" class="password-logo">
@@ -188,10 +167,9 @@
             <div id="password-error">密码不正确，请重新输入</div>
         </div>
     </div>
-
-    <!-- 将原有的body内容用div包裹并默认隐藏 -->
+    
     <div id="site-content" class="content-hidden">
-    <!-- START PRELOADER AREA-->
+   
     <div class="preloader">
         <svg viewbox="0 0 1000 1000" preserveaspectratio="none">
             <path id="preloaderSvg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
@@ -210,22 +188,20 @@
             </div>
         </div>
     </div>
-    <!-- END PRELOADER AREA -->
-    <!-- START MENU DESIGN AREA -->
+
     <header class="main-header">
         <div class="header-upper">
             <div class="container">
                 <div class="header-inner d-flex align-items-center">
-                    <!-- START LOGO DESIGN AREA -->
+               
                     <div class="logo-outer">
                         <div class="logo">
                             <a href="index.html"><img src="assets/images/logo.png" alt="Logo" title="Logo" /></a>
                         </div>
                     </div>
-                    <!-- / END LOGO DESIGN AREA -->
-                    <!-- START NAV DESIGN AREA -->
+                 
                     <div class="nav-outer clearfix mx-auto">
-                        <!-- Main Menu -->
+                       
                         <nav class="main-menu navbar-expand-lg">
                             <div class="navbar-header">
                                 <div class="mobile-logo">
@@ -233,7 +209,7 @@
                                         <img src="assets/images/logo.png" alt="Logo" title="Logo" />
                                     </a>
                                 </div>
-                                <!-- Toggle Button -->
+                                
                                 <button type="button" class="navbar-toggle" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
@@ -248,7 +224,7 @@
                                 </ul>
                             </div>
                         </nav>
-                        <!-- / END NAV DESIGN AREA -->
+                        
                     </div>
                     <div class="menu-btns">
                         <a href="contact.html?reload=true" class="theme-btn">联系我<i class="ri-shake-hands-line"></i></a>
@@ -257,12 +233,11 @@
             </div>
         </div>
     </header>
-    <!-- / END MENU DESIGN AREA -->
-    <!-- START ABOUT DESIGN AREA -->
+    
     <section id="about" class="about-area">
         <div class="container">
             <div class="row">
-                <!-- START ABOUT IMAGE DESIGN AREA -->
+               
                 <div class="col-lg-4">
                     <div class="about-image-part wow fadeInUp delay-0-3s">
                         <img src="assets/images/about/profile.png" alt="关于我" />
@@ -279,8 +254,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- / END ABOUT IMAGE DESIGN AREA -->
-                <!-- START ABOUT TEXT DESIGN AREA -->
+               
                 <div class="col-lg-8">
                     <div class="about-content-part wow fadeInUp delay-0-2s">
                         <p>关于我</p>
@@ -306,7 +280,7 @@
                         <h2>服务过的品牌</h2>
                         <div class="company-list">
                             <div class="company-grid">
-                                <!-- 第一行 -->
+                              
                                 <div class="scroller" data-direction="left" data-speed="slow">
                                     <div class="scroller__inner">
                                         <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner1.png" alt="" />
@@ -320,10 +294,10 @@
                                         <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner18.png" alt="" />
                                         <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner19.png" alt="" />
                                         <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner20.png" alt="" />
-                                        <!-- ... 添加更多 logo ... -->
+                                     
                                     </div>
                                 </div>
-                                <!-- 第二行 -->
+                           
                                 <div class="scroller" data-direction="right" data-speed="slow">
                                     <div class="scroller__inner">
                                         <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner6.png" alt="" />
@@ -336,10 +310,10 @@
                                         <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner23.png" alt="" />
                                         <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner24.png" alt="" />
                                         <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner25.png" alt="" />
-                                        <!-- ... 添加更多 logo ... -->
+                                     
                                     </div>
                                 </div>
-                                <!-- 第三行 -->
+                           
                                 <div class="scroller" data-direction="left" data-speed="slow">
                                     <div class="scroller__inner">
                                         <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner11.png" alt="" />
@@ -353,19 +327,18 @@
                                         <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner29.png" alt="" />
                                         <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner30.png" alt="" />
                                         <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner31.png" alt="" />
-                                        <!-- ... 添加更多 logo ... -->
+                               
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- / END ABOUT TEXT DESIGN AREA -->
+                
             </div>
         </div>
     </section>
-    <!-- / END ABOUT DESIGN AREA -->
-    <!-- START PORTFOLIO DESIGN AREA -->
+    
     <section id="portfolio" class="portfolio-area">
         <div class="container">
             <div class="container-inner">
@@ -387,7 +360,7 @@
                 </ul>
                 <div class="row project-masonry-active">
 
-                    <!-- 项目卡片 1 -->
+                
                     <div class="col-lg-4 col-md-6 item featured">
                         <div class="project-card wow fadeInUp delay-0-3s" data-image="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-images/project1.jpg">
                             <div class="project-preview">
@@ -403,7 +376,7 @@
                         </div>
                     </div>
                     
-                    <!-- 项目卡片 2 -->
+               
                     <div class="col-lg-4 col-md-6 item featured">
                         <div class="project-card wow fadeInUp delay-0-4s" data-image="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-images/project2.jpg">
                             <div class="project-preview">
@@ -420,7 +393,7 @@
                     </div>
 
 
-                    <!-- 项目卡片 3 -->
+                   
                     <div class="col-lg-4 col-md-6 item featured">
                         <div class="project-card wow fadeInUp delay-0-3s" data-image="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-images/project3.jpg">
                             <div class="project-preview">
@@ -436,7 +409,7 @@
                         </div>
                     </div>
                     
-                    <!-- 项目卡片 4 -->
+              
                     <div class="col-lg-4 col-md-6 item featured">
                         <div class="project-card wow fadeInUp delay-0-3s" data-image="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-images/project4.jpg">
                             <div class="project-preview">
@@ -452,7 +425,6 @@
                         </div>
                     </div>
 
-                    <!-- 项目卡片 5 -->
                     <div class="col-lg-4 col-md-6 item featured">
                         <div class="project-card wow fadeInUp delay-0-3s" data-image="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-images/project5.jpg">
                             <div class="project-preview">
@@ -468,7 +440,6 @@
                         </div>
                     </div>
 
-                        <!-- 项目卡片 6 -->
                     <div class="col-lg-4 col-md-6 item featured">
                         <div class="project-card wow fadeInUp delay-0-3s" data-image="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-images/project6.jpg">
                             <div class="project-preview">
@@ -484,7 +455,6 @@
                         </div>
                     </div>
 
-                        <!-- 项目卡片 7 -->
                     <div class="col-lg-4 col-md-6 item featured">
                         <div class="project-card wow fadeInUp delay-0-3s" data-image="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-images/project7.jpg">
                             <div class="project-preview">
@@ -500,7 +470,6 @@
                         </div>
                     </div>
 
-                        <!-- 项目卡片 8 -->
                     <div class="col-lg-4 col-md-6 item featured">
                         <div class="project-card wow fadeInUp delay-0-3s" data-image="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-images/project8.jpg">
                             <div class="project-preview">
@@ -515,7 +484,7 @@
                             </div>
                         </div>
                     </div>
-                        <!-- 项目卡片 9 -->
+                      
                     <div class="col-lg-4 col-md-6 item featured">
                         <div class="project-card wow fadeInUp delay-0-3s" data-image="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-images/project9.jpg">
                             <div class="project-preview">
@@ -531,7 +500,6 @@
                         </div>
                     </div>
 
-                            <!-- 项目卡片 10 -->
                     <div class="col-lg-4 col-md-6 item featured">
                         <div class="project-card wow fadeInUp delay-0-3s" data-image="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-images/project10.jpg">
                             <div class="project-preview">
@@ -547,7 +515,6 @@
                         </div>
                     </div>
 
-                        <!-- 项目卡片 11 -->
                     <div class="col-lg-4 col-md-6 item featured">
                         <div class="project-card wow fadeInUp delay-0-3s" data-image="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-images/project11.jpg">
                             <div class="project-preview">
@@ -568,7 +535,7 @@
 
                 </div>
                 
-                <!-- KV图库容器 -->
+             
                 <div id="kv-gallery-container" class="d-none">
                     <div class="container">
                         <div class="row">
@@ -590,7 +557,7 @@
                     </div>
                 </div>
                 
-                <!-- 摄影图库容器 - 移除多余的嵌套container -->
+             
                 <div id="photography-gallery-container" class="d-none">
                     <div class="row">
                         <div class="col-12">
@@ -599,7 +566,7 @@
                             </div>
                             <div class="photography-grid-gallery">
                                 <div class="photography-grid-sizer"></div>
-                                <!-- 动态加载的内容会添加在这里 -->
+                            
                             </div>
                             <div class="text-center mt-4 mb-5">
                                 <button id="load-more-photography" class="theme-btn" data-page="1">加载更多</button>
@@ -613,7 +580,7 @@
                     </div>
                 </div>
 
-                <!-- 包装设计图库容器 -->
+   
                 <div id="packaging-gallery-container" class="d-none">
                     <div class="row">
                         <div class="col-12">
@@ -621,7 +588,7 @@
                                 <ul class="packaging-filter-buttons"></ul>
                             </div>
                             <div class="packaging-grid-gallery">
-                                <!-- 动态加载的内容会添加在这里 -->
+                              
                             </div>
                             <div class="text-center mt-4 mb-5">
                                 <button id="load-more-packaging" class="theme-btn" data-page="1">加载更多</button>
@@ -635,7 +602,7 @@
                     </div>
                 </div>
 
-                <!-- 活动运营图库容器 -->
+              
                 <div id="campaign-gallery-container" class="d-none">
                     <div class="row">
                         <div class="col-12">
@@ -643,7 +610,7 @@
                                 <ul class="campaign-filter-buttons"></ul>
                             </div>
                             <div class="campaign-grid-gallery">
-                                <!-- 动态加载的内容会添加在这里 -->
+                                
                             </div>
                             <div class="text-center mt-4 mb-5">
                                 <button id="load-more-campaign" class="theme-btn" data-page="1">加载更多</button>
@@ -659,12 +626,11 @@
             </div>
         </div>
     </section>
-    <!--  // END CALL TO ACTION DESIGN AREA -->
-          <!-- START CALL TO ACTION DESIGN AREA -->
+    
     <section  class="call-to-action-area">
         <div class="container">
             <div class="row">
-                <!-- START ABOUT TEXT DESIGN AREA -->
+               
                 <div class="col-lg-12">
                     <div class="about-content-part call-to-action-part wow fadeInUp delay-0-2s text-center">
                         <h2>准备好开始您的项目了吗？</h2>
@@ -674,12 +640,11 @@
                         </div>
                     </div>
                 </div>
-                <!-- / END ABOUT TEXT DESIGN AREA -->
+              
             </div>
         </div>
     </section>
-    <!--  // END CALL TO ACTION DESIGN AREA -->
-    <!-- START FOOTER DESIGN AREA -->
+   
     <footer class="main-footer">
         <div class="footer-bottom pt-50 pb-40">
             <div class="container">
@@ -702,45 +667,44 @@
             </div>
         </div>
     </footer>
-    <!-- / END FOOTER DESIGN AREA -->
-    <!-- START SCROOL UP DESIGN AREA -->
+    
     <div class="progress-wrap cursor-pointer">
         <i class="ri-arrow-up-double-line"></i>
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
             <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
         </svg>
     </div>
-    <!-- / END SCROOL UP DESIGN AREA -->
+    
     </div>
     
-    <!-- JQUERY JS -->
+    
     <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <!-- BOOTSTRAP JS-->
+    
     <script src="assets/js/bootstrap.min.js"></script>
-    <!-- APPEAR JS -->
+
     <script src="assets/js/appear.min.js"></script>
-    <!-- GSAP JS -->
+    
     <script src="assets/js/gsap.min.js"></script>
-    <!-- MAGNIFICANT JS -->
+   
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <!-- SLICK JS-->
+    
     <script src="assets/js/slick.min.js"></script>
-    <!-- NICE SELECT JS-->
+   
     <script src="assets/js/jquery.nice-select.min.js"></script>
-    <!-- IMAGE LOADER JS-->
+ 
     <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <!-- ISOTOPE JS-->
+
     <script src="assets/js/isotope.pkgd.min.js"></script>
-    <!--  WOW ANIMATION JS-->
+
     <script src="assets/js/wow.min.js"></script>
-    <!-- SCRIPT JS-->
+
     <script src="assets/js/script.js"></script>
-    <!-- 替换现有的下载处理脚本 -->
+
     <script>
     document.getElementById('downloadBtn').addEventListener('click', function(e) {
         e.preventDefault();
         
-        // 创建一个与网站主色调一致的提示框
+ 
         const alertDiv = document.createElement('div');
         alertDiv.style.cssText = `
             position: fixed;
@@ -761,17 +725,17 @@
             backdrop-filter: blur(10px);
         `;
         
-        // 添加内容
+       
         alertDiv.innerHTML = `
             <h3 style="margin-top: 0; color: #fff; font-size: 22px; font-weight: 500;">敬请期待</h3>
             <p style="margin-bottom: 25px; color: rgba(255,255,255,0.85); font-size: 16px; line-height: 1.6;">文件待更新。感谢您的关注！</p>
             <button style="background-color: #ff6b00; color: white; border: none; padding: 10px 25px; border-radius: 30px; cursor: pointer; font-size: 15px; transition: all 0.3s ease; font-weight: 500;">确 定</button>
         `;
         
-        // 添加到页面
+     
         document.body.appendChild(alertDiv);
         
-        // 为按钮添加悬停效果
+       
         const button = alertDiv.querySelector('button');
         button.addEventListener('mouseover', function() {
             this.style.backgroundColor = '#ff8c00';
@@ -785,12 +749,12 @@
             this.style.boxShadow = 'none';
         });
         
-        // 点击确定按钮关闭提示框
+
         button.addEventListener('click', function() {
             document.body.removeChild(alertDiv);
         });
         
-        // 点击其他地方也可以关闭提示框
+      
         document.addEventListener('click', function closeAlert(event) {
             if (!alertDiv.contains(event.target) && event.target !== document.getElementById('downloadBtn')) {
                 document.body.removeChild(alertDiv);
@@ -798,7 +762,7 @@
             }
         });
         
-        // 添加渐入效果
+    
         alertDiv.style.opacity = '0';
         setTimeout(function() {
             alertDiv.style.transition = 'opacity 0.3s ease';
@@ -806,25 +770,25 @@
         }, 10);
     });
     </script>
-    <!-- 添加新的 main.js -->
+  
     <script src="assets/js/main.js"></script>
     <script>
     $(document).ready(function() {
-        // 初始化 Isotope
+      
         var $grid = $('.project-masonry-active').isotope({
             itemSelector: '.item',
             layoutMode: 'fitRows'
         });
         
-        // 绑定过滤器点击事件
+      
         $('.project-filter li').on('click', function() {
             var filterValue = $(this).attr('data-filter');
             $('.project-filter li').removeClass('current');
             $(this).addClass('current');
             
-            // 如果不是"精选活动"，则隐藏所有项目
+         
             if (filterValue !== '.featured') {
-                $grid.isotope({ filter: '.non-existent-class' }); // 使用一个不存在的类来隐藏所有项目
+                $grid.isotope({ filter: '.non-existent-class' }); 
             } else {
                 $grid.isotope({ filter: filterValue });
             }
@@ -833,39 +797,39 @@
         });
     });
     </script>
-    <!-- 替换原有的灯箱HTML，移除导航按钮 -->
+
     <div class="featured-lightbox">
         <div class="featured-lightbox-content">
             <img src="" alt="项目详情" style="max-width: 600px; width: 100%;">
             <div class="featured-lightbox-close">×</div>
-            <!-- 已移除导航按钮 -->
+
         </div>
     </div>
-    <!-- 添加对新JS文件的引用 -->
+
     <script src="assets/js/featured-lightbox.js"></script>
-    <!-- 添加改进的密码保护脚本 -->
+
     <script>
-    // 添加这段代码在脚本最前面，用于立即隐藏密码弹窗
+
     (function() {
-        // 立即检查本地存储中的认证状态
+    
         const isAuth = localStorage.getItem('eindesign_auth');
         const urlParams = new URLSearchParams(window.location.search);
         const reloadParam = urlParams.get('reload');
         
-        // 如果已验证或有reload参数，立即隐藏密码弹窗
+      
         if (isAuth === 'true' || reloadParam === 'true') {
-            // 添加内联样式以立即隐藏密码弹窗
+        
             document.write('<style>#password-overlay{display:none !important;} #site-content{display:block !important;}</style>');
         }
     })();
 
-    // 定义受保护的页面列表
+  
     const protectedPages = ['/index.html', '/', '/contact.html'];
 
-    // 当前页面路径
+
     const currentPath = window.location.pathname;
 
-    // 检查是否需要密码保护
+
     function needsProtection() {
         return protectedPages.some(page => 
             currentPath.endsWith(page) || 
@@ -873,12 +837,12 @@
         );
     }
 
-    // 检查是否已验证密码
+
     function checkAuth() {
-        // 从localStorage中获取身份验证状态
+     
         const isAuth = localStorage.getItem('eindesign_auth');
         
-        // 如果不需要保护，直接显示内容
+    
         if (!needsProtection()) {
             if (document.getElementById('password-overlay')) {
                 document.getElementById('password-overlay').style.display = 'none';
@@ -889,7 +853,7 @@
             return true;
         }
         
-        // 如果需要保护但已验证，显示内容
+     
         if (isAuth === 'true') {
             if (document.getElementById('password-overlay')) {
                 document.getElementById('password-overlay').style.display = 'none';
@@ -900,44 +864,44 @@
             return true;
         }
         
-        // 需要保护且未验证
+     
         return false;
     }
 
-    // 页面加载时检查验证状态
+ 
     document.addEventListener('DOMContentLoaded', function() {
-        // 跳过不需要保护的页面
+     
         if (!needsProtection()) {
             return;
         }
         
-        // 检查URL参数，看是否有reload=true
+      
         const urlParams = new URLSearchParams(window.location.search);
         const reloadParam = urlParams.get('reload');
         
-        // 如果是刚刷新回来的页面，移除reload参数并开始正常显示内容
+    
         if (reloadParam === 'true') {
-            // 移除URL参数但不刷新页面
+        
             window.history.replaceState({}, document.title, window.location.pathname);
-            // 隐藏密码遮罩，显示内容
+            
             document.getElementById('password-overlay').style.display = 'none';
             document.getElementById('site-content').classList.remove('content-hidden');
-            return; // 不再执行后续检查
+            return; 
         }
         
-        // 正常的验证状态检查
+ 
         if (checkAuth()) {
-            return; // 已验证或不需要验证
+            return; 
         }
         
-        // 使用您提供的密码哈希值 - 对应密码
+      
         const correctPasswordHash = '7a8a13fd1a02e94c99f4bd229ca5c98981e4155dd26e6046a72a5d39160200b3';
         
         const passwordSubmit = document.getElementById('password-submit');
         const passwordInput = document.getElementById('password-input');
         const passwordError = document.getElementById('password-error');
         
-        // 添加淡入效果
+
         const passwordBox = document.getElementById('password-box');
         passwordBox.style.opacity = '0';
         passwordBox.style.transform = 'translateY(20px)';
@@ -948,45 +912,45 @@
             passwordBox.style.transform = 'translateY(0)';
         }, 300);
         
-        // 按钮点击事件
+      
         passwordSubmit.addEventListener('click', function() {
             validatePassword();
         });
         
-        // 回车键验证
+     
         passwordInput.addEventListener('keypress', function(e) {
             if (e.key === 'Enter') {
                 validatePassword();
             }
         });
         
-        // 验证密码函数
+    
         function validatePassword() {
             const inputValue = passwordInput.value.trim();
-            // 计算输入值的SHA-256哈希
+           
             const inputHash = sha256(inputValue);
             
             if (inputHash === correctPasswordHash) {
-                // 密码正确，保存验证状态
+               
                 localStorage.setItem('eindesign_auth', 'true');
                 
-                // 显示简单的加载提示
+            
                 document.getElementById('password-box').innerHTML = `
                     <p style="color: #fff; font-size: 22px; margin-bottom: 15px;">验证成功</p>
                     <p style="color: rgba(255,255,255,0.7);">正在加载页面...</p>
                 `;
                 
-                // 直接刷新页面，添加reload参数
+         
                 setTimeout(() => {
                     window.location.href = window.location.pathname + '?reload=true';
                 }, 800);
             } else {
-                // 密码错误，显示错误信息
+         
                 passwordError.style.display = 'block';
                 passwordInput.value = '';
                 passwordInput.focus();
                 
-                // 错误提示震动效果
+          
                 passwordBox.style.animation = 'shake 0.5s';
                 setTimeout(() => {
                     passwordBox.style.animation = '';
@@ -995,7 +959,7 @@
         }
     });
 
-    // 添加震动动画
+   
     document.head.insertAdjacentHTML('beforeend', `
         <style>
             @keyframes shake {
