@@ -34,7 +34,40 @@
             height: 24px;
         }
     </style>
-    
+
+        <style>
+        .icon-small {
+            width: 24px;
+            height: 24px;
+        }
+        
+        /* 解决火狐浏览器项目卡片排列问题 */
+        @-moz-document url-prefix() {
+            .project-masonry-active .item {
+                width: 33.3333% !important;
+                max-width: 33.3333% !important;
+                flex: 0 0 33.3333% !important;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            
+            @media (max-width: 991px) {
+                .project-masonry-active .item {
+                    width: 50% !important;
+                    max-width: 50% !important;
+                    flex: 0 0 50% !important;
+                }
+            }
+            
+            @media (max-width: 767px) {
+                .project-masonry-active .item {
+                    width: 100% !important;
+                    max-width: 100% !important;
+                    flex: 0 0 100% !important;
+                }
+            }
+        }
+    </style>
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
     <style>
@@ -969,6 +1002,50 @@
             }
         </style>
     `);
+    </script>
+
+        <!-- 添加新的 main.js -->
+    <script src="assets/js/main.js"></script>
+    <script>
+    $(document).ready(function() {
+        // 初始化 Isotope
+        var $grid = $('.project-masonry-active').isotope({
+            itemSelector: '.item',
+            layoutMode: 'fitRows',
+            // 添加以下选项以解决火狐浏览器问题
+            fitRows: {
+                gutter: 0  // 确保没有额外的间距
+            }
+        });
+        
+        // 在窗口调整大小时重新布局
+        $(window).on('resize', function() {
+            $grid.isotope('layout');
+        });
+        
+        // 强制在火狐浏览器中重新计算布局
+        if(navigator.userAgent.indexOf("Firefox") > -1) {
+            setTimeout(function() {
+                $grid.isotope('layout');
+            }, 100);
+        }
+        
+        // 绑定过滤器点击事件
+        $('.project-filter li').on('click', function() {
+            var filterValue = $(this).attr('data-filter');
+            $('.project-filter li').removeClass('current');
+            $(this).addClass('current');
+            
+            // 如果不是"精选活动"，则隐藏所有项目
+            if (filterValue !== '.featured') {
+                $grid.isotope({ filter: '.non-existent-class' }); // 使用一个不存在的类来隐藏所有项目
+            } else {
+                $grid.isotope({ filter: filterValue });
+            }
+            
+            return false;
+        });
+    });
     </script>
 </body>
 
