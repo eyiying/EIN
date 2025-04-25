@@ -1,0 +1,518 @@
+/* 基础样式 - 匹配主站风格 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0 !important;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-focus-ring-color: transparent !important;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* 使用与主站相同的字体 */
+    background-color: var(--body-background); /* 使用主站背景色 */
+    color: var(--main-color);
+    line-height: 1.6;
+}
+
+/* 使用主站变量 */
+:root {
+    --main-color: #9f9f9f;
+    --heading-color: #fff;
+    --primary-color: #eb5d3a; /* 使用主站主色调 */
+    --lighter-color: #ccc;
+    --subtitle-color: #ccc;
+    --black-color: #000;
+    --border-color: rgba(119, 119, 125, .2);
+    --button-border: rgba(119, 119, 125, .2);
+    --body-background: #000; /* 使用主站背景色 */
+    --grey-bg: #E6EAEE;
+}
+
+/* 使用更符合主站风格的页面标题样式 */
+.banner-section {
+    padding-top: 200px; /* 基础内边距 */
+    margin-top: 0; 
+    background-color: #000;
+}
+
+.banner-section h1 {
+    color: #ffffff;
+    font-size: 48px;
+    line-height: 1.2;
+}
+
+.banner-section p.lead {
+    color: #b0b0b0;
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 类别区域卡片样式 - 去掉左侧橙色边框 */
+.category {
+    margin-bottom: 40px;
+    background-color: #121212; /* 深灰色背景 */
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 类别标题样式 */
+.category h2 {
+    color: var(--primary-color); /* 使用主站主色调 */
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(119, 119, 125, 0.2);
+    font-size: 1.8rem;
+    position: relative;
+}
+
+/* 类别标题前的装饰元素 */
+.category h2::before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* 工具网格容器增加间距 */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 一行三个卡片 */
+    gap: 25px; /* 增加卡片之间的间距 */
+    margin-top: 20px;
+}
+
+/* 工具卡片 - 网格版 - 匹配主站风格 */
+.tool-card {
+    display: flex;
+    background-color: #1a1a1a; /* 比类别区域稍亮的背景色 */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-left: 3px solid var(--primary-color); /* 保留左侧橙色边框 */
+    transition: all 0.3s ease;
+    outline: 0 !important;
+    border: 1px solid transparent; /* 添加透明边框，为悬停状态做准备 */
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-focus-ring-color: transparent !important;
+    height: 100%; /* 确保同一行的卡片高度一致 */
+    position: relative; /* 为伪元素定位 */
+}
+
+/* 完全禁用所有选择和高亮 */
+.tool-card, 
+.tool-card *, 
+.tool-card *::before, 
+.tool-card *::after {
+    outline: 0 !important;
+    -webkit-focus-ring-color: transparent !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+/* 覆盖所有可能的状态 */
+.tool-card:focus,
+.tool-card:active,
+.tool-card:hover,
+.tool-card:focus-within,
+.tool-card:focus-visible,
+.tool-card:target,
+.tool-card:-moz-focusring,
+.tool-card *:focus,
+.tool-card *:active,
+.tool-card *:hover,
+.tool-card *:focus-within,
+.tool-card *:focus-visible,
+.tool-card *:target,
+.tool-card *:-moz-focusring {
+    outline: 0 !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    -webkit-focus-ring-color: transparent !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+/* 悬停效果 - 使用主站橙红色 */
+.tool-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(235, 93, 58, 0.25); /* 使用主站橙红色的阴影 */
+}
+
+/* 添加悬停时的橙色边框效果 - 减小边框粗细 */
+.tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid transparent; /* 减小边框宽度为1px */
+    border-radius: 7px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.tool-card:hover::before {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0px var(--primary-color); /* 移除额外的阴影效果 */
+}
+
+/* 强调悬停状态 */
+.tool-card:hover .tool-title h3 {
+    color: var(--primary-color); /* 悬停时标题变为橙色 */
+}
+
+/* 图标区域 - 网格版 */
+.tool-icon {
+    width: 60px;
+    background-color: #151515; /* 在小卡片和大卡片之间的中间色调 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid var(--border-color);
+    outline: 0 !important;
+}
+
+.tool-icon img {
+    max-width: 40px;
+    max-height: 40px;
+    outline: 0 !important;
+}
+
+/* 内容区域 - 网格版 */
+.tool-content {
+    flex: 1;
+    padding: 12px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 60px;
+    outline: 0 !important;
+}
+
+.tool-title h3 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    outline: 0 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 80px; /* 为标题也添加右侧内边距，避免与按钮重叠 */
+}
+
+/* 为Firefox添加特殊样式 */
+@-moz-document url-prefix() {
+    .tool-title h3 {
+        font-size: 1.2rem; /* Firefox中进一步减小字体大小 */
+        letter-spacing: -0.02em; /* 轻微减小字符间距 */
+    }
+}
+
+/* 为Safari添加特殊样式 */
+@media not all and (min-resolution:.001dpcm) { 
+    @supports (-webkit-appearance:none) {
+        .tool-title h3 {
+            font-size: 1.2rem; /* Safari中也减小字体大小 */
+            letter-spacing: -0.02em;
+        }
+    }
+}
+
+.tool-description p {
+    color: #a2a2ac;
+    font-size: 1rem;
+    line-height: 1.4; /* 增加行高 */
+    padding-right: 100px; /* 增加右侧内边距，确保足够空间 */
+    outline: 0 !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* 限制最多显示2行 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word; /* 确保长单词可以换行 */
+    max-width: 100%; /* 确保不会超出容器 */
+}
+
+/* 按钮 - 网格版 */
+.tool-action {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    outline: 0 !important;
+    z-index: 2; /* 确保按钮在文字上层 */
+    min-width: 85px; /* 设置最小宽度，确保有足够空间容纳"Enter"文字和图标 */
+    text-align: right;
+}
+
+/* 工具链接按钮样式 */
+.tool-link {
+    background-color: #2a2a2a;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+    outline: 0 !important;
+    border: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-focus-ring-color: transparent !important;
+    min-width: 44px; /* 设置最小宽度 */
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 添加阴影使按钮更突出 */
+}
+
+/* 图标尺寸保持不变 */
+.tool-link i {
+    font-size: 1.1rem;
+}
+
+/* 悬停和点击状态改为橙色 */
+.tool-link:hover,
+.tool-link:focus,
+.tool-link:active {
+    background-color: var(--primary-color); /* 悬停和点击时使用橙色 */
+    color: #ffffff;
+    outline: 0 !important;
+    border: none !important;
+    box-shadow: 0 3px 8px rgba(235, 93, 58, 0.3); /* 悬停时添加橙色阴影 */
+    transform: translateY(-2px); /* 保留轻微上浮效果 */
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #b0b0b0;
+    margin-top: 20px;
+}
+
+/* 响应式设计 - 网格版 */
+@media (max-width: 1024px) {
+    /* 平板设备：一行两个卡片 */
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* 在较窄屏幕上隐藏Enter文字 */
+    .tool-link span {
+        display: none;
+    }
+    
+    .tool-link {
+        padding: 6px;
+        min-width: 36px;
+    }
+    
+    .tool-description p {
+        padding-right: 50px; /* 当按钮只显示图标时减小内边距 */
+    }
+    
+    .tool-action {
+        min-width: 40px;
+    }
+    
+    .tool-title h3 {
+        padding-right: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* 小平板和大手机 */
+    .tool-icon {
+        width: 50px;
+    }
+    
+    .tool-content {
+        padding: 10px;
+        min-height: 50px;
+    }
+    
+    .tool-title h3 {
+        font-size: 1.2rem;
+        padding-right: 45px;
+    }
+    
+    .tool-description p {
+        padding-right: 45px;
+    }
+    
+    .tool-action {
+        right: 10px;
+        min-width: 36px;
+    }
+    
+    .tool-link {
+        padding: 5px;
+        min-width: 32px;
+    }
+}
+
+@media (max-width: 576px) {
+    /* 手机设备：一行一个卡片 */
+    .tools-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tool-description p {
+        padding-right: 45px;
+        -webkit-line-clamp: 2; /* 重新限制为2行 */
+    }
+}
+
+/* 全局禁用所有轮廓和焦点样式 */
+*:focus,
+*:active,
+*:hover,
+*:focus-within,
+*:focus-visible,
+*:target,
+*:-moz-focusring {
+    outline: 0 !important;
+    -webkit-focus-ring-color: transparent !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+/* 特别针对所有链接和交互元素 */
+a, button, input, select, textarea, [tabindex], [contenteditable] {
+    outline: 0 !important;
+    -webkit-focus-ring-color: transparent !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+a:focus, button:focus, input:focus, select:focus, textarea:focus,
+[tabindex]:focus, [contenteditable]:focus {
+    outline: 0 !important;
+    -webkit-focus-ring-color: transparent !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+/* 响应式调整 */
+@media (max-width: 1200px) {
+    .banner-section {
+        padding-top: 180px;
+    }
+}
+
+@media (max-width: 991px) {
+    .banner-section {
+        padding-top: 160px;
+    }
+}
+
+@media (max-width: 767px) {
+    .banner-section {
+        padding-top: 140px;
+    }
+}
+
+/* 特别针对超过800px的屏幕 */
+@media (min-width: 800px) {
+    .banner-section {
+        padding-top: 220px; /* 特别大的内边距 */
+    }
+}
+
+@media (min-width: 992px) {
+    .banner-section {
+        padding-top: 240px; /* 进一步增加内边距 */
+    }
+}
+
+@media (min-width: 1200px) {
+    .banner-section {
+        padding-top: 260px; /* 在大屏上使用非常大的内边距 */
+    }
+}
+
+@media (max-width: 576px) {
+    .banner-section {
+        padding-top: 120px;
+    }
+}
+
+/* 如果底部有其他特殊背景色，也统一修改 */
+.copyright-text a {
+    color: var(--primary-color); /* 链接使用主站主色调 */
+    transition: color 0.3s;
+}
+
+.copyright-text a:hover {
+    color: #d44d2e; /* 链接悬停色 */
+}
+
+/* 确保主站的回到顶部按钮也使用正确的色调 */
+.progress-wrap {
+    border-color: var(--primary-color);
+}
+
+.progress-wrap::after {
+    color: var(--primary-color);
+}
+
+.progress-wrap svg.progress-circle path {
+    stroke: var(--primary-color);
+}
+
+/* 响应式调整 */
+@media (max-width: 992px) {
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr); /* 中等屏幕一行两个卡片 */
+    }
+    
+    .category {
+        padding: 25px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .tools-grid {
+        grid-template-columns: 1fr; /* 小屏幕一行一个卡片 */
+    }
+    
+    .category {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+    
+    .category h2 {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+}
+
+@media (min-width: 1200px) {
+    /* 在大屏幕上进一步增加内边距，确保文字不被遮挡 */
+    .tool-description p {
+        padding-right: 120px;
+    }
+    
+    .tool-title h3 {
+        padding-right: 100px;
+    }
+    
+    .tool-action {
+        min-width: 100px;
+    }
+}

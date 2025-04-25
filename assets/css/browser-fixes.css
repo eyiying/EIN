@@ -1,0 +1,295 @@
+/* 浏览器兼容性修复 - 全面版本 */
+
+/* 1. 基本重置，确保一致的起点 */
+* {
+  box-sizing: border-box;
+}
+
+/* 2. 输入占位符兼容性 */
+input::-webkit-input-placeholder {
+  color: var(--placeholder-color, #999);
+  opacity: .4;
+}
+input::-moz-placeholder {
+  color: var(--placeholder-color, #999);
+  opacity: .4;
+}
+input:-ms-input-placeholder {
+  color: var(--placeholder-color, #999);
+  opacity: .4;
+}
+input::placeholder {
+  color: var(--placeholder-color, #999);
+  opacity: .4;
+}
+
+/* 3. 搜索输入框兼容性 */
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  display: none;
+}
+
+/* 4. 遮罩效果兼容 */
+.mask-gradient {
+  mask: linear-gradient(90deg, transparent, white 100%, white 100%, transparent);
+  -webkit-mask: linear-gradient(90deg, transparent, white 80%, white 80%, transparent);
+}
+
+/* 5. 模糊背景效果兼容 */
+.blur-bg {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* 6. 硬件加速 */
+.hardware-accelerated {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
+}
+
+/* 7. 各种浏览器前缀 */
+.transition {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.transform {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* 8. 动画兼容性 */
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  -webkit-animation: fadeIn 0.5s ease-in;
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* ===================== Firefox 特定修复 ===================== */
+@-moz-document url-prefix() {
+  /* KV设计标签按钮修复 */
+  .kv-filter-buttons li {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* 活动运营标签按钮修复 */
+  .campaign-filter-buttons li {
+    display: inline-block;
+    margin-right: 10px; 
+    margin-bottom: 10px;
+  }
+  
+  /* UI设计标签按钮修复 */
+  .ui-design-filter-buttons li {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* 包装设计标签按钮修复 */
+  .packaging-filter-buttons li {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* 智能设计标签按钮修复 */
+  .intelligent-filter-buttons li {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* 活动运营长图修复 */
+  .campaign-grid-gallery:not(.poster-layout) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  /* UI设计长图修复 */
+  .ui-design-grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  /* 包装设计长图修复 */
+  .packaging-grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  /* IP设计长图修复 */
+  .ip-design-grid-gallery {
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  /* 字体设计长图修复 */
+  .font-design-grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  /* 长内容图片修复 */
+  .campaign-grid-item.longcontent-item img,
+  .ui-design-grid-item img.long-image,
+  .packaging-grid-item img.long-image,
+  .ip-design-grid-item img.long-image,
+  .font-design-grid-item img.long-image {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* ===================== Safari 特定修复 ===================== */
+@media not all and (min-resolution:.001dpcm) { 
+  @supports (-webkit-appearance:none) {
+    /* KV设计标签按钮修复 */
+    .kv-filter-buttons li {
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    
+    /* 活动运营标签按钮修复 */
+    .campaign-filter-buttons li {
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    
+    /* UI设计标签按钮修复 */
+    .ui-design-filter-buttons li {
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    
+    /* 包装设计标签按钮修复 */
+    .packaging-filter-buttons li {
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    
+    /* 智能设计标签按钮修复 */
+    .intelligent-filter-buttons li {
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    
+    /* 活动运营长图修复 */
+    .campaign-grid-gallery:not(.poster-layout) {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-gap: 20px;
+    }
+    
+    /* UI设计长图修复 */
+    .ui-design-grid-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-gap: 20px;
+    }
+    
+    /* 包装设计长图修复 */
+    .packaging-grid-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-gap: 20px;
+    }
+    
+    /* IP设计长图修复 */
+    .ip-design-grid-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-gap: 20px;
+    }
+    
+    /* 字体设计长图修复 */
+    .font-design-grid-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-gap: 20px;
+    }
+    
+    /* 长内容图片修复 */
+    .campaign-grid-item.longcontent-item img,
+    .ui-design-grid-item img.long-image,
+    .packaging-grid-item img.long-image,
+    .ip-design-grid-item img.long-image,
+    .font-design-grid-item img.long-image {
+      width: 100%;
+      height: auto;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+/* 9. 响应式设计通用修复 */
+@media (max-width: 1200px) {
+  .campaign-grid-item,
+  .ui-design-grid-item,
+  .packaging-grid-item,
+  .ip-design-grid-item,
+  .font-design-grid-item {
+    width: calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 992px) {
+  .campaign-grid-item,
+  .ui-design-grid-item,
+  .packaging-grid-item,
+  .ip-design-grid-item,
+  .font-design-grid-item {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .campaign-grid-item,
+  .ui-design-grid-item,
+  .packaging-grid-item,
+  .ip-design-grid-item,
+  .font-design-grid-item {
+    width: 100%;
+  }
+  
+  .filter-buttons li,
+  .kv-filter-buttons li,
+  .campaign-filter-buttons li,
+  .ui-design-filter-buttons li,
+  .packaging-filter-buttons li,
+  .intelligent-filter-buttons li {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+  }
+} 

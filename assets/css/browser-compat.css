@@ -1,0 +1,314 @@
+/**
+ * 浏览器兼容性样式
+ * 提供针对不同浏览器的特定样式修复和兼容性解决方案
+ */
+
+/* ===== 基础重置 ===== */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== 输入框占位符兼容性 ===== */
+/* Chrome/Opera/Safari */
+::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Firefox 19+ */
+::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* IE 10+ */
+:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Firefox 18- */
+:-moz-placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* 获得焦点时淡出占位符 */
+input:focus::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+
+input:focus::-moz-placeholder {
+  opacity: 0.5;
+}
+
+input:focus:-ms-input-placeholder {
+  opacity: 0.5;
+}
+
+input:focus:-moz-placeholder {
+  opacity: 0.5;
+}
+
+/* ===== 搜索输入框兼容性 ===== */
+/* 清除默认样式 */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+input[type="search"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* ===== Mask效果兼容性 ===== */
+.mask-effect {
+  -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
+
+.mask-radial {
+  -webkit-mask-image: radial-gradient(circle, black 70%, transparent 100%);
+  mask-image: radial-gradient(circle, black 70%, transparent 100%);
+}
+
+/* ===== 模糊背景效果兼容性 ===== */
+.blur-bg {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  
+  /* 对于不支持backdrop-filter的浏览器 */
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Safari 需要前缀 */
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .blur-bg {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+/* ===== 硬件加速 ===== */
+.hw-accelerated {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -moz-perspective: 1000;
+  -ms-perspective: 1000;
+  perspective: 1000;
+}
+
+/* ===== 动画兼容性 ===== */
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  -webkit-animation: fadeIn 0.3s ease-in-out;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* 动画暂停（针对减少运动偏好） */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in {
+    -webkit-animation: none;
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* ===== Firefox特定修复 ===== */
+@-moz-document url-prefix() {
+  /* 修复Firefox中的滚动行为 */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  }
+  
+  /* 修复Firefox中的表单元素外观 */
+  select {
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    padding-right: 25px;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 5px center;
+  }
+  
+  /* 修复Firefox特有的Grid布局问题 */
+  .grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+}
+
+/* ===== Safari特定修复 ===== */
+@media not all and (min-resolution:.001dpcm) {
+  @supports (-webkit-appearance:none) {
+    /* 修复Safari中的粘性定位 */
+    .sticky-header {
+      position: -webkit-sticky;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    /* 修复Safari中的圆角溢出问题 */
+    .overflow-rounded {
+      -webkit-mask-image: -webkit-radial-gradient(white, black);
+      overflow: hidden;
+    }
+    
+    /* 修复Safari中的Flexbox问题 */
+    .flex-container {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+/* ===== IE特定修复 ===== */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10+ 特定样式 */
+  .ie-flex-fix {
+    display: block;
+    width: 100%;
+  }
+  
+  /* 修复IE中的对象拟合 */
+  .cover-img {
+    height: 100%;
+    width: auto;
+    min-width: 100%;
+    max-width: none;
+  }
+}
+
+/* ===== 响应式设计兼容性 ===== */
+/* 移动设备 */
+@media (max-width: 767px) {
+  .mobile-only {
+    display: block;
+  }
+  
+  .desktop-only {
+    display: none;
+  }
+  
+  /* 触屏设备的点击区域放大 */
+  .touch-enabled button,
+  .touch-enabled .button,
+  .touch-enabled a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* 移动端字体大小调整 */
+  body {
+    font-size: 16px;
+  }
+  
+  h1 {
+    font-size: 24px;
+  }
+  
+  h2 {
+    font-size: 20px;
+  }
+}
+
+/* 平板设备 */
+@media (min-width: 768px) and (max-width: 991px) {
+  .tablet-only {
+    display: block;
+  }
+  
+  /* 平板特定布局调整 */
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 桌面设备 */
+@media (min-width: 992px) {
+  .desktop-only {
+    display: block;
+  }
+  
+  .mobile-only,
+  .tablet-only {
+    display: none;
+  }
+  
+  /* 桌面特定布局调整 */
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 大屏幕设备 */
+@media (min-width: 1400px) {
+  .xl-layout {
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  
+  /* 大屏特定布局调整 */
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ===== 打印兼容性 ===== */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  
+  a {
+    text-decoration: underline;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+} 
