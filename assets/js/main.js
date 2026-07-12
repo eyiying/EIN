@@ -124,6 +124,36 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 定义一个全局变量来追踪masonry实例
     window.campaignPosterMasonry = null;
+    window.pendingMasonryCallbacks = [];
+    window.masonryLoading = false;
+
+    function runWithMasonry(callback) {
+        if (typeof Masonry !== 'undefined') {
+            callback();
+            return;
+        }
+
+        window.pendingMasonryCallbacks.push(callback);
+        if (window.masonryLoading) return;
+
+        window.masonryLoading = true;
+        const script = document.createElement('script');
+        script.src = 'https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js';
+        script.async = true;
+        script.onload = function() {
+            window.masonryLoading = false;
+            const callbacks = window.pendingMasonryCallbacks.splice(0);
+            callbacks.forEach(function(fn) {
+                fn();
+            });
+        };
+        script.onerror = function() {
+            window.masonryLoading = false;
+            window.pendingMasonryCallbacks = [];
+            console.warn('Masonry布局库加载失败，将使用默认网格布局');
+        };
+        document.head.appendChild(script);
+    }
     
     // 统一图片加载函数
     window.loadImages = function(options) {
@@ -387,6 +417,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // 创建图片元素
                 const imgElement = document.createElement('img');
+                imgElement.loading = 'lazy';
+                imgElement.decoding = 'async';
                 imgElement.src = result.url;
                 imgElement.alt = `${config.filter} ${startIndex + index}`;
                 
@@ -1926,6 +1958,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // 在图片加载后初始化或更新Masonry
         if (filter === 'poster') {
             setTimeout(function() {
+                runWithMasonry(function() {
                 if (page === 1) {
                     // 首次加载，创建新实例
                     if (!window.campaignPosterMasonry) {
@@ -1944,6 +1977,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         console.log('Masonry布局已更新');
                     }
                 }
+                });
             }, 500);
         }
     };
@@ -1985,7 +2019,9 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('初始化或更新Masonry布局，页码:', page);
         
         if (typeof Masonry === 'undefined') {
-            console.error('Masonry库未加载！');
+            runWithMasonry(function() {
+                initOrUpdateMasonry(container, page);
+            });
             return;
         }
         
@@ -2533,6 +2569,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // 在图片加载后进行布局处理
         setTimeout(function() {
+            runWithMasonry(function() {
             // 使用Masonry布局替代CSS Grid布局
             if (typeof Masonry !== 'undefined') {
                 if (page === 1) {
@@ -2571,6 +2608,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // 确保图片加载后显示容器
             document.getElementById('intelligent-gallery-container').classList.remove('d-none');
+            });
         }, 500);
     };
 }); 

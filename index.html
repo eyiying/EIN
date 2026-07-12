@@ -15,9 +15,7 @@
     <link rel="apple-touch-icon" href="assets/images/favicon.png">
     <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
     <!-- ALL GOOGLE FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com" crossorigin>
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
     <!-- FONT AWESOME CSS -->
@@ -38,8 +36,6 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <!-- 在其他CSS文件后添加 -->
     <link rel="stylesheet" href="assets/css/featured-lightbox.css">
-    <!-- 添加密码保护样式 -->
-    <link rel="stylesheet" href="assets/css/password-protection.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -53,25 +49,9 @@
         }
     </style>
     
-    <!-- 添加SHA-256哈希函数 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
 </head>
 
 <body>
-    <!-- 添加密码保护遮罩层 -->
-    <div id="password-overlay" style="display:none;">
-        <div id="password-box">
-            <img src="assets/images/logo.png" alt="Logo" class="password-logo">
-            <h2>欢迎访问</h2>
-            <p>小站受保护中，请输入正确的密码继续访问。</p>
-            <input type="password" id="password-input" placeholder="请输入访问密码">
-            <button id="password-submit">确认访问</button>
-            <div id="password-error">密码不正确，请重新输入</div>
-        </div>
-    </div>
-
-    <!-- 将原有的body内容用div包裹并默认隐藏 -->
-    <div id="site-content" class="content-hidden">
     <!-- START PRELOADER AREA-->
     <div class="preloader">
         <svg viewbox="0 0 1000 1000" preserveaspectratio="none">
@@ -100,7 +80,7 @@
                     <!-- START LOGO DESIGN AREA -->
                     <div class="logo-outer">
                         <div class="logo">
-                            <a href="index.html"><img src="assets/images/logo.png" alt="Logo" title="Logo" /></a>
+                            <a href="index.html"><img loading="eager" decoding="async" src="assets/images/logo.png" alt="Logo" title="Logo" /></a>
                         </div>
                     </div>
                     <!-- / END LOGO DESIGN AREA -->
@@ -111,7 +91,7 @@
                             <div class="navbar-header">
                                 <div class="mobile-logo">
                                     <a href="index.html">
-                                        <img src="assets/images/logo.png" alt="Logo" title="Logo" />
+                                        <img loading="eager" decoding="async" src="assets/images/logo.png" alt="Logo" title="Logo" />
                                     </a>
                                 </div>
                                 <!-- Toggle Button -->
@@ -132,7 +112,7 @@
                         <!-- / END NAV DESIGN AREA -->
                     </div>
                     <div class="menu-btns">
-                        <a href="contact.html?reload=true" class="theme-btn">联系我<i class="ri-shake-hands-line"></i></a>
+                        <a href="contact.html" class="theme-btn">联系我<i class="ri-shake-hands-line"></i></a>
                     </div>
                 </div>
             </div>
@@ -146,16 +126,16 @@
                 <!-- START ABOUT IMAGE DESIGN AREA -->
                 <div class="col-lg-4">
                     <div class="about-image-part wow fadeInUp delay-0-3s">
-                        <img src="assets/images/about/profile.png" alt="关于我" />
+                        <img loading="eager" decoding="async" fetchpriority="high" src="assets/images/about/profile.png" alt="关于我" />
                         <h2>易颖 EIN</h2>
                         <P> 视  觉  设  计 </P>
                         <p1></p>10年设计工作经验，视觉中国签约插画师，毕业于华东师范大学设计学院，获德国iF概念设计奖，就职过京东、前程无忧等公司，服务过100+家企业。</p1>
                         <div class="about-social text-center">
                             <ul>
-                                <li><span class="icon-container"><img src="assets/images/svg/ps.svg" alt="Photoshop" style="width: 24px; height: 24px;" /></span></li>
-                                <li><span class="icon-container"><img src="assets/images/svg/ai.svg" alt="Illustrator" style="width: 24px; height: 24px;" /></span></li>
-                                <li><span class="icon-container"><img src="assets/images/svg/python.svg" alt="Python" style="width: 24px; height: 24px;" /></span></li>
-                                <li><span class="icon-container"><img src="assets/images/svg/sheying.svg" alt="摄影" style="width: 24px; height: 24px;" /></span></li>
+                                <li><span class="icon-container"><img loading="lazy" decoding="async" src="assets/images/svg/ps.svg" alt="Photoshop" style="width: 24px; height: 24px;" /></span></li>
+                                <li><span class="icon-container"><img loading="lazy" decoding="async" src="assets/images/svg/ai.svg" alt="Illustrator" style="width: 24px; height: 24px;" /></span></li>
+                                <li><span class="icon-container"><img loading="lazy" decoding="async" src="assets/images/svg/python.svg" alt="Python" style="width: 24px; height: 24px;" /></span></li>
+                                <li><span class="icon-container"><img loading="lazy" decoding="async" src="assets/images/svg/sheying.svg" alt="摄影" style="width: 24px; height: 24px;" /></span></li>
                             </ul>
                         </div>
                     </div>
@@ -166,9 +146,7 @@
                     <div class="about-content-part wow fadeInUp delay-0-2s">
                         <h2>关于我</h2>
                         <p1>
-                            美术专业背景，插画及手绘功底扎实，涉猎电商、UI、平面和包装专业领域，
-                            擅长Ai设计、品牌营销及活动运营。设计风格灵活，有印刷基础和陶艺基础
-                                ，能把控和应对线上线下各类设计需求。具备3D概念设计能力，会表情包动效，热爱潮流的科技，喜欢摄影也会简单的Vlog剪辑；可搭建静态网站，也能用python编写小程序。
+                            10年+设计经验，兼具品牌设计、UI/UX设计、产品设计及AI应用开发能力。主导过品牌0-1建设、企业级平台设计及数字化系统搭建，能够独立完成从需求分析、产品规划、交互设计、视觉设计到项目落地的全流程工作。熟悉HTML、CSS、JavaScript及Python，持续探索AI赋能设计与业务场景，已自主开发多项效率工具及管理系统。
                         </p1>
                         <div class="adress-field">
                             <ul>
@@ -190,50 +168,50 @@
                                 <!-- 第一行 -->
                                 <div class="scroller" data-direction="left" data-speed="slow">
                                     <div class="scroller__inner">
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner1.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner2.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner3.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner4.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner0.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner5.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner16.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner17.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner18.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner19.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner20.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner1.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner2.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner3.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner4.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner0.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner5.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner16.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner17.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner18.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner19.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner20.png" alt="" />
                                         <!-- ... 添加更多 logo ... -->
                                     </div>
                                 </div>
                                 <!-- 第二行 -->
                                 <div class="scroller" data-direction="right" data-speed="slow">
                                     <div class="scroller__inner">
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner6.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner7.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner8.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner9.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner10.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner21.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner22.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner23.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner24.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner25.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner6.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner7.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner8.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner9.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner10.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner21.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner22.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner23.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner24.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner25.png" alt="" />
                                         <!-- ... 添加更多 logo ... -->
                                     </div>
                                 </div>
                                 <!-- 第三行 -->
                                 <div class="scroller" data-direction="left" data-speed="slow">
                                     <div class="scroller__inner">
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner11.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner12.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner13.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner14.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner15.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner26.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner27.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner28.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner29.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner30.png" alt="" />
-                                        <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner31.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner11.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner12.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner13.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner14.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner15.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner26.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner27.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner28.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner29.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner30.png" alt="" />
+                                        <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/client-logos/partner31.png" alt="" />
                                         <!-- ... 添加更多 logo ... -->
                                     </div>
                                 </div>
@@ -275,7 +253,7 @@
                     <div class="col-lg-4 col-md-6 item featured">
                         <div class="project-card wow fadeInUp delay-0-3s" data-image="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-images/project1.jpg">
                             <div class="project-preview">
-                                <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-preview/preview1.jpg" alt="项目预览">
+                                <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-preview/preview1.jpg" alt="项目预览">
                             </div>
                             <div class="project-info">
                                 <h3>中航国际招聘大赛</h3>
@@ -291,7 +269,7 @@
                     <div class="col-lg-4 col-md-6 item featured">
                         <div class="project-card wow fadeInUp delay-0-4s" data-image="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-images/project2.jpg">
                             <div class="project-preview">
-                                <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-preview/preview2.jpg" alt="项目预览">
+                                <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-preview/preview2.jpg" alt="项目预览">
                             </div>
                             <div class="project-info">
                                 <h3>IMAGE+医疗系统</h3>
@@ -307,7 +285,7 @@
                     <div class="col-lg-4 col-md-6 item featured">
                         <div class="project-card wow fadeInUp delay-0-3s" data-image="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-images/project3.jpg">
                             <div class="project-preview">
-                                <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-preview/preview3.jpg" alt="项目预览">
+                                <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-preview/preview3.jpg" alt="项目预览">
                             </div>
                             <div class="project-info">
                                 <h3>安佳产品宣传</h3>
@@ -323,7 +301,7 @@
                     <div class="col-lg-4 col-md-6 item featured">
                         <div class="project-card wow fadeInUp delay-0-3s" data-image="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-images/project4.jpg">
                             <div class="project-preview">
-                                <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-preview/preview4.jpg" alt="项目预览">
+                                <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-preview/preview4.jpg" alt="项目预览">
                             </div>
                             <div class="project-info">
                                 <h3>京东区域小程序</h3>
@@ -339,7 +317,7 @@
                     <div class="col-lg-4 col-md-6 item featured">
                         <div class="project-card wow fadeInUp delay-0-3s" data-image="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-images/project5.jpg">
                             <div class="project-preview">
-                                <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-preview/preview5.jpg" alt="项目预览">
+                                <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-preview/preview5.jpg" alt="项目预览">
                             </div>
                             <div class="project-info">
                                 <h3>点亮618</h3>
@@ -355,7 +333,7 @@
                     <div class="col-lg-4 col-md-6 item featured">
                         <div class="project-card wow fadeInUp delay-0-3s" data-image="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-images/project6.jpg">
                             <div class="project-preview">
-                                <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-preview/preview6.jpg" alt="项目预览">
+                                <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-preview/preview6.jpg" alt="项目预览">
                             </div>
                             <div class="project-info">
                                 <h3>JOY周边设计</h3>
@@ -371,7 +349,7 @@
                     <div class="col-lg-4 col-md-6 item featured">
                         <div class="project-card wow fadeInUp delay-0-3s" data-image="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-images/project7.jpg">
                             <div class="project-preview">
-                                <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-preview/preview7.jpg" alt="项目预览">
+                                <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-preview/preview7.jpg" alt="项目预览">
                             </div>
                             <div class="project-info">
                                 <h3>折腾会项目</h3>
@@ -387,7 +365,7 @@
                     <div class="col-lg-4 col-md-6 item featured">
                         <div class="project-card wow fadeInUp delay-0-3s" data-image="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-images/project8.jpg">
                             <div class="project-preview">
-                                <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-preview/preview8.jpg" alt="项目预览">
+                                <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-preview/preview8.jpg" alt="项目预览">
                             </div>
                             <div class="project-info">
                                 <h3>京东618快闪</h3>
@@ -403,7 +381,7 @@
                     <div class="col-lg-4 col-md-6 item featured">
                         <div class="project-card wow fadeInUp delay-0-3s" data-image="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-images/project9.jpg">
                             <div class="project-preview">
-                                <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-preview/preview9.jpg" alt="项目预览">
+                                <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-preview/preview9.jpg" alt="项目预览">
                             </div>
                             <div class="project-info">
                                 <h3>东游记项目</h3>
@@ -419,7 +397,7 @@
                     <div class="col-lg-4 col-md-6 item featured">
                         <div class="project-card wow fadeInUp delay-0-3s" data-image="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-images/project10.jpg">
                             <div class="project-preview">
-                                <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-preview/preview10.jpg" alt="项目预览">
+                                <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-preview/preview10.jpg" alt="项目预览">
                             </div>
                             <div class="project-info">
                                 <h3>乐秀首页改版</h3>
@@ -435,7 +413,7 @@
                     <div class="col-lg-4 col-md-6 item featured">
                         <div class="project-card wow fadeInUp delay-0-3s" data-image="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-images/project11.jpg">
                             <div class="project-preview">
-                                <img src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-preview/preview11.jpg" alt="项目预览">
+                                <img loading="lazy" decoding="async" src="https://eindesign-1256127475.cos.ap-shanghai.myqcloud.com/project-preview/preview11.jpg" alt="项目预览">
                             </div>
                             <div class="project-info">
                                 <h3>金银岛APP</h3>
@@ -633,7 +611,7 @@
                         <h2>准备好开始您的项目了吗？</h2>
                         <p>让我们一起创造精彩✨。我可以提供全职或兼职合作，为您带来卓越的设计作品。</p>
                         <div class="hero-btns">
-                            <a href="contact.html?reload=true" class="theme-btn">联系我 <i class="ri-shake-hands-line"></i></a>
+                            <a href="contact.html" class="theme-btn">联系我 <i class="ri-shake-hands-line"></i></a>
                         </div>
                     </div>
                 </div>
@@ -674,35 +652,33 @@
         </svg>
     </div>
     <!-- / END SCROOL UP DESIGN AREA -->
-    </div> <!-- 结束site-content div -->
-    
     <!-- JQUERY JS -->
-    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/jquery-3.6.0.min.js" defer></script>
     <!-- BOOTSTRAP JS-->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap.min.js" defer></script>
     <!-- APPEAR JS -->
-    <script src="assets/js/appear.min.js"></script>
+    <script src="assets/js/appear.min.js" defer></script>
     <!-- GSAP JS -->
-    <script src="assets/js/gsap.min.js"></script>
+    <script src="assets/js/gsap.min.js" defer></script>
     <!-- MAGNIFICANT JS -->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js" defer></script>
     <!-- SLICK JS-->
-    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/js/slick.min.js" defer></script>
     <!-- NICE SELECT JS-->
-    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js" defer></script>
     <!-- IMAGE LOADER JS-->
-    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js" defer></script>
     <!-- ISOTOPE JS-->
-    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js" defer></script>
     <!--  WOW ANIMATION JS-->
-    <script src="assets/js/wow.min.js"></script>
-    <!-- 添加Masonry库 -->
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="assets/js/wow.min.js" defer></script>
     <!-- SCRIPT JS-->
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js" defer></script>
     <!-- 添加下载处理脚本 -->
     <script>
-    document.getElementById('downloadBtn').addEventListener('click', async function(e) {
+    const downloadBtn = document.getElementById('downloadBtn');
+    if (downloadBtn) {
+    downloadBtn.addEventListener('click', async function(e) {
         e.preventDefault();
         
         try {
@@ -728,9 +704,10 @@
             alert('下载失败，请稍后重试');
         }
     });
+    }
     </script>
     <!-- 添加新的 main.js -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
     <!-- 替换原有的灯箱HTML，移除导航按钮 -->
     <div class="featured-lightbox">
         <div class="featured-lightbox-content">
@@ -740,45 +717,8 @@
         </div>
     </div>
     <!-- 添加对新JS文件的引用 -->
-    <script src="assets/js/featured-lightbox.js"></script>
+    <script src="assets/js/featured-lightbox.js" defer></script>
     
-    <!-- 添加密码保护JS -->
-    <script src="assets/js/password-protection.js"></script>
-    
-    <!-- 添加调试代码 -->
-    <script>
-        // 检查密码保护脚本是否正常工作
-        console.log('密码保护脚本测试');
-        
-        // 确保DOM已经加载完成
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM已加载，检查密码保护元素');
-            
-            // 检查密码元素是否存在
-            var overlay = document.getElementById('password-overlay');
-            var box = document.getElementById('password-box');
-            var input = document.getElementById('password-input');
-            var button = document.getElementById('password-submit');
-            
-            console.log('密码遮罩是否存在:', !!overlay);
-            console.log('密码框是否存在:', !!box);
-            console.log('密码输入框是否存在:', !!input);
-            console.log('提交按钮是否存在:', !!button);
-            
-            // 强制显示密码遮罩
-            if(overlay) {
-                overlay.style.display = 'flex';
-                console.log('已强制显示密码遮罩');
-            }
-            
-            // 强制隐藏内容
-            var content = document.getElementById('site-content');
-            if(content) {
-                content.style.display = 'none';
-                console.log('已强制隐藏内容区域');
-            }
-        });
-    </script>
 </body>
 
 </html>
