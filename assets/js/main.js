@@ -2163,6 +2163,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeCampaignCategories().then(success => {
         if (success) {
             console.log('活动运营分类初始化成功');
+            window.campaignCategoriesInitialized = true;
             // 加载第一个分类的图片
             const firstCategory = Object.keys(campaignFolderDisplayNames)[0] || 'longcontent';
 
@@ -2574,7 +2575,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (!window.campaignCategoriesInitialized) {
                     initializeCampaignCategories().then(function() {
                         window.campaignCategoriesInitialized = true;
+                        const firstCategory = Object.keys(campaignFolderDisplayNames)[0] || 'longcontent';
+                        const loadMoreBtn = document.getElementById('load-more-campaign');
+                        if (loadMoreBtn) {
+                            loadMoreBtn.setAttribute('data-filter', firstCategory);
+                            loadMoreBtn.setAttribute('data-page', '1');
+                            loadMoreBtn.textContent = '加载更多';
+                            loadMoreBtn.disabled = false;
+                        }
+                        window.loadCampaignImages(firstCategory, 1);
                     });
+                } else {
+                    const activeFilter = document.querySelector('.campaign-filter-buttons li.active');
+                    const filter = activeFilter ? activeFilter.getAttribute('data-filter') : 'longcontent';
+                    const loadMoreBtn = document.getElementById('load-more-campaign');
+                    if (loadMoreBtn) {
+                        loadMoreBtn.setAttribute('data-filter', filter);
+                        loadMoreBtn.setAttribute('data-page', '1');
+                        loadMoreBtn.textContent = '加载更多';
+                        loadMoreBtn.disabled = false;
+                    }
+                    window.loadCampaignImages(filter, 1);
                 }
             } else if (filterValue === '.ui-design') {
                 $('#ui-design-gallery-container').removeClass('d-none');
