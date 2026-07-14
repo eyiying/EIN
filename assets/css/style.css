@@ -4841,6 +4841,106 @@ kv-filter-buttons li.active,
     }
 }
 
+/* 品牌设计样式 */
+.brand-design-category-tags {
+    margin-bottom: 30px;
+}
+
+.brand-design-filter-buttons,
+.brand-packaging-filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.brand-packaging-category-tags {
+    margin-bottom: 24px;
+}
+
+.brand-design-filter-buttons li,
+.brand-packaging-filter-buttons li {
+    background: #131313;
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    color: var(--main-color);
+    cursor: pointer;
+    font-size: 15px;
+    line-height: 1;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.brand-design-filter-buttons li.active,
+.brand-design-filter-buttons li:hover,
+.brand-packaging-filter-buttons li.active,
+.brand-packaging-filter-buttons li:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+.brand-design-grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.brand-design-grid-item {
+    overflow: hidden;
+}
+
+.brand-design-grid-item-content {
+    background: #111;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.brand-design-grid-item img {
+    cursor: pointer;
+    display: block;
+    height: auto;
+    transition: transform 0.3s ease;
+    width: 100%;
+}
+
+.brand-design-grid-item img:hover {
+    transform: scale(1.03);
+}
+
+.brand-design-empty {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--main-color);
+    font-size: 16px;
+    grid-column: 1 / -1;
+    line-height: 1.8;
+    padding: 48px 24px;
+    text-align: center;
+}
+
+@media (max-width: 991px) {
+    .brand-design-grid-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 575px) {
+    .brand-design-grid-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .brand-design-filter-buttons li,
+    .brand-packaging-filter-buttons li {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+}
+
 /* IP设计样式 */
 .ip-design-grid-gallery {
     display: flex;
@@ -5048,6 +5148,40 @@ kv-filter-buttons li.active,
     display: none !important;
 }
 
+/* 灯箱滚动条优化 */
+.kv-lightbox-content,
+.featured-lightbox-content {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(235, 93, 58, 0.45) rgba(255, 255, 255, 0.04);
+}
+
+.kv-lightbox-content::-webkit-scrollbar,
+.featured-lightbox-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.kv-lightbox-content::-webkit-scrollbar-track,
+.featured-lightbox-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 999px;
+}
+
+.kv-lightbox-content::-webkit-scrollbar-thumb,
+.featured-lightbox-content::-webkit-scrollbar-thumb {
+    background: rgba(235, 93, 58, 0.34);
+    border-radius: 999px;
+}
+
+.kv-lightbox-content:hover::-webkit-scrollbar-thumb,
+.featured-lightbox-content:hover::-webkit-scrollbar-thumb {
+    background: rgba(235, 93, 58, 0.62);
+}
+
+.kv-lightbox-content::-webkit-scrollbar-corner,
+.featured-lightbox-content::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
 /* 针对不同设备的优化 */
 @media (max-width: 1200px) {
     #intelligent-gallery-container {
@@ -5074,5 +5208,3 @@ kv-filter-buttons li.active,
         padding: 5px;
     }
 }
-
-

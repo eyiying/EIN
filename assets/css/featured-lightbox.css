@@ -30,6 +30,30 @@
     border-radius: 4px;
     padding: 10px;
     box-shadow: none;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(235, 93, 58, 0.45) rgba(255, 255, 255, 0.04);
+}
+
+.featured-lightbox-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.featured-lightbox-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 999px;
+}
+
+.featured-lightbox-content::-webkit-scrollbar-thumb {
+    background: rgba(235, 93, 58, 0.34);
+    border-radius: 999px;
+}
+
+.featured-lightbox-content:hover::-webkit-scrollbar-thumb {
+    background: rgba(235, 93, 58, 0.62);
+}
+
+.featured-lightbox-content::-webkit-scrollbar-corner {
+    background: transparent;
 }
 
 .featured-lightbox-content img {
@@ -76,7 +100,7 @@
     .featured-lightbox-content {
         max-width: 600px;
     }
-    
+
     .featured-lightbox-content img {
         max-width: 580px;
     }
@@ -87,7 +111,7 @@
         width: 95%;
         max-width: 95%;
     }
-    
+
     .featured-lightbox-close {
         top: 10px;
         right: 10px;
@@ -95,7 +119,7 @@
         height: 35px;
         font-size: 20px;
     }
-    
+
     .featured-lightbox-prev,
     .featured-lightbox-next {
         width: 40px;
@@ -107,4 +131,4 @@
 /* 当灯箱打开时防止滚动 */
 body.lightbox-open {
     overflow: hidden;
-} 
+}

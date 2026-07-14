@@ -241,10 +241,8 @@
                     <li data-filter=".featured" class="current">综合项目</li>
                     <li data-filter=".kv-design">KV设计</li>
                     <li data-filter=".campaign">活动运营</li>
+                    <li data-filter=".brand-design">品牌设计</li>
                     <li data-filter=".ui-design">UI设计</li>
-                    <li data-filter=".intelligent">AI设计</li>
-                    <li data-filter=".packaging">包装设计</li>
-                    <li data-filter=".ip-design">IP设计</li>
                     <li data-filter=".font-design">字体设计</li>
                     <li data-filter=".photography">摄影</li>
                 </ul>
@@ -484,6 +482,31 @@
                             </div>
                             <div class="text-center mt-4 mb-5">
                                 <button id="load-more-packaging" class="theme-btn" data-page="1">加载更多</button>
+                            </div>
+                            <div class="loading-indicator text-center d-none">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">加载中...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 品牌设计图库容器 -->
+                <div id="brand-design-gallery-container" class="d-none">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="brand-design-category-tags">
+                                <ul class="brand-design-filter-buttons"></ul>
+                            </div>
+                            <div class="brand-packaging-category-tags d-none">
+                                <ul class="brand-packaging-filter-buttons"></ul>
+                            </div>
+                            <div class="brand-design-grid-gallery">
+                                <!-- 动态加载的内容会添加在这里 -->
+                            </div>
+                            <div class="text-center mt-4 mb-5">
+                                <button id="load-more-brand-design" class="theme-btn" data-page="1">加载更多</button>
                             </div>
                             <div class="loading-indicator text-center d-none">
                                 <div class="spinner-border text-primary" role="status">

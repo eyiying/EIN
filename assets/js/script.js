@@ -245,6 +245,7 @@ Version      : 1.0
             // 隐藏所有特殊展示区域
             $('#kv-gallery-container').addClass('d-none');
             $('#photography-gallery-container').addClass('d-none');
+            $('#brand-design-gallery-container').addClass('d-none');
             $('#packaging-gallery-container').addClass('d-none');
             $('#campaign-gallery-container').addClass('d-none');
             $('#ui-design-gallery-container').addClass('d-none');
@@ -328,6 +329,10 @@ Version      : 1.0
             } else if (filterValue === '.photography') {
                 // 显示摄影图库
                 $('#photography-gallery-container').removeClass('d-none');
+                $('.project-masonry-active').addClass('d-none');
+            } else if (filterValue === '.brand-design') {
+                // 显示品牌设计图库
+                $('#brand-design-gallery-container').removeClass('d-none');
                 $('.project-masonry-active').addClass('d-none');
             } else if (filterValue === '.packaging') {
                 // 显示包装设计图库
