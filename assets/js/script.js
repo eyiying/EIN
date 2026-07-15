@@ -342,6 +342,19 @@ Version      : 1.0
                 // 显示活动运营图库
                 $('#campaign-gallery-container').removeClass('d-none');
                 $('.project-masonry-active').addClass('d-none');
+                setTimeout(function() {
+                    if (typeof window.loadCampaignImages === 'function') {
+                        const activeFilter = $('.campaign-filter-buttons li.active').attr('data-filter') || 'longcontent';
+                        const loadMoreBtn = document.getElementById('load-more-campaign');
+                        if (loadMoreBtn) {
+                            loadMoreBtn.textContent = '加载中...';
+                            loadMoreBtn.disabled = true;
+                            loadMoreBtn.setAttribute('data-filter', activeFilter);
+                            loadMoreBtn.setAttribute('data-page', '1');
+                        }
+                        window.loadCampaignImages(activeFilter, 1);
+                    }
+                }, 0);
             } else if (filterValue === '.intelligent') {
                 // 显示智能设计图库
                 $('#intelligent-gallery-container').removeClass('d-none');

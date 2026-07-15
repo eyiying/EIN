@@ -1129,6 +1129,39 @@ document.addEventListener('DOMContentLoaded', function() {
                         window.loadUIDesignImages(filter, 1);
                     }
                 }
+                // 如果点击的是活动运营分类
+                else if (filterValue === '.campaign' && campaignGalleryContainer) {
+                    campaignGalleryContainer.classList.remove('d-none');
+                    projectMasonry.classList.add('d-none');
+                    if(kvGalleryContainer) kvGalleryContainer.classList.add('d-none');
+                    if(photographyGalleryContainer) photographyGalleryContainer.classList.add('d-none');
+                    if(packagingGalleryContainer) packagingGalleryContainer.classList.add('d-none');
+                    if(uiDesignGalleryContainer) uiDesignGalleryContainer.classList.add('d-none');
+
+                    const loadCurrentCampaign = function() {
+                        const activeFilter = document.querySelector('.campaign-filter-buttons li.active');
+                        const filter = activeFilter ? activeFilter.getAttribute('data-filter') : 'longcontent';
+                        const loadMoreBtn = document.getElementById('load-more-campaign');
+                        if (loadMoreBtn) {
+                            loadMoreBtn.textContent = '加载中...';
+                            loadMoreBtn.disabled = true;
+                            loadMoreBtn.setAttribute('data-filter', filter);
+                            loadMoreBtn.setAttribute('data-page', '1');
+                        }
+                        window.loadCampaignImages(filter, 1);
+                    };
+
+                    if (!window.campaignCategoriesInitialized) {
+                        initializeCampaignCategories().then(function(success) {
+                            window.campaignCategoriesInitialized = success;
+                            if (success) {
+                                loadCurrentCampaign();
+                            }
+                        });
+                    } else {
+                        loadCurrentCampaign();
+                    }
+                }
                 else {
                     // 隐藏KV画廊和摄影画廊，显示项目列表
                     if(kvGalleryContainer) kvGalleryContainer.classList.add('d-none');
